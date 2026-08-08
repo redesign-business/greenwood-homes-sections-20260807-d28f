@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #eeeeee;
+  --color-background-tertiary: #666666;
+  --color-background-alternative: #000000;
+  --color-text-primary: #000000;
+  --color-text-secondary: #666666;
+  --color-text-alternative: #ffffff;
+  --color-border-primary: #000000;
+  --color-border-secondary: #aaaaaa;
+  --color-border-alternative: #ffffff;
+  --scheme-background: var(--color-background-primary);
+  --scheme-foreground: var(--color-background-primary);
+  --scheme-text: var(--color-text-primary);
+  --scheme-border: var(--color-border-primary);
+  --scheme-button-text: var(--color-text-alternative);
+  --font-sans: Arial, sans-serif;
+  --font-display: var(--font-sans);
+  --space-section-sm: 4rem;
+  --space-section-md: 6rem;
+  --space-section-lg: 7rem;
+  --radius-button: 0rem;
+  --radius-card: 0rem;
+  --radius-image: 0rem;
+  --radius-form: 0rem;
+  --radius-badge: 0rem;
+  --radius-control: 0rem;
+  --shadow-card: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--scheme-background);
+  color: var(--scheme-text);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
+
+img {
+  display: block;
+}

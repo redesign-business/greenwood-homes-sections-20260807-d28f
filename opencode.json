@@ -1,0 +1,174 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "enabled_providers": ["vercel"],
+  "model": "vercel/deepseek/deepseek-v4-flash-0731",
+  "agent": {
+    "research": {
+      "model": "vercel/deepseek/deepseek-v4-flash-0731",
+      "mode": "primary",
+      "steps": 20,
+      "permission": {
+        "read": { "*": "deny", "raw.md": "allow", "public/images/manifest.json": "allow", "proof.md": "allow" },
+        "edit": { "*": "deny", "proof.md": "allow" },
+        "glob": "deny",
+        "grep": "deny",
+        "list": "deny",
+        "bash": "deny",
+        "task": "deny",
+        "skill": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "external_directory": "deny"
+      }
+    },
+    "planner": {
+      "model": "vercel/deepseek/deepseek-v4-flash-0731",
+      "mode": "primary",
+      "steps": 20,
+      "permission": {
+        "read": {
+          "*": "deny",
+          ".redesign/planning-input.md": "allow",
+          ".redesign/sections.json": "allow"
+        },
+        "edit": {
+          "*": "deny",
+          ".redesign/sections.json": "allow"
+        },
+        "glob": "deny",
+        "grep": "deny",
+        "list": "deny",
+        "bash": "deny",
+        "task": "deny",
+        "skill": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "external_directory": "deny",
+        "relume-library_*": "deny"
+      }
+    },
+    "image": {
+      "model": "vercel/openai/gpt-5-nano",
+      "mode": "primary",
+      "steps": 20,
+      "permission": {
+        "read": {
+          "*": "deny",
+          ".redesign/image-input.md": "allow",
+          ".redesign/image-selection.json": "allow"
+        },
+        "edit": {
+          "*": "deny",
+          ".redesign/image-selection.json": "allow"
+        },
+        "glob": "deny",
+        "grep": "deny",
+        "list": "deny",
+        "bash": "deny",
+        "task": "deny",
+        "skill": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "external_directory": "deny",
+        "relume-library_*": "deny"
+      }
+    },
+    "page": {
+      "model": "vercel/deepseek/deepseek-v4-flash-0731",
+      "mode": "primary",
+      "steps": 20,
+      "permission": {
+        "read": {
+          "*": "deny",
+          ".redesign/page-input.md": "allow",
+          "app/page.tsx": "allow"
+        },
+        "edit": {
+          "*": "deny",
+          "app/page.tsx": "allow"
+        },
+        "glob": "deny",
+        "grep": "deny",
+        "list": "deny",
+        "bash": "deny",
+        "task": "deny",
+        "skill": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "external_directory": "deny",
+        "relume-library_*": "deny"
+      }
+    },
+    "theme": {
+      "model": "vercel/openai/gpt-5-nano",
+      "mode": "primary",
+      "steps": 20,
+      "permission": {
+        "read": { "*": "deny", ".redesign/theme.json": "allow" },
+        "edit": { "*": "deny", ".redesign/theme.json": "allow" },
+        "glob": "deny",
+        "grep": "deny",
+        "list": "deny",
+        "bash": "deny",
+        "task": "deny",
+        "skill": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "external_directory": "deny",
+        "relume-library_*": "deny"
+      }
+    },
+    "repair": {
+      "model": "vercel/deepseek/deepseek-v4-flash-0731",
+      "mode": "primary",
+      "steps": 20,
+      "permission": {
+        "read": {
+          "*": "deny",
+          "package.json": "allow",
+          ".redesign/relume-api.md": "allow",
+          "app/page.tsx": "allow",
+          "app/globals.css": "allow",
+          "app/layout.tsx": "allow",
+          "components/ui/button.tsx": "allow",
+          "components/ui/card.tsx": "allow",
+          "components/ui/badge.tsx": "allow"
+        },
+        "edit": {
+          "*": "deny",
+          "app/page.tsx": "allow",
+          "app/globals.css": "allow",
+          "app/layout.tsx": "allow"
+        },
+        "glob": "deny",
+        "grep": "allow",
+        "list": "deny",
+        "bash": "deny",
+        "task": "deny",
+        "skill": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "external_directory": "deny",
+        "relume-library_*": "deny"
+      }
+    }
+  },
+  "provider": {
+    "vercel": {
+      "npm": "@ai-sdk/gateway",
+      "env": ["AI_GATEWAY_API_KEY"],
+      "options": { "apiKey": "{env:AI_GATEWAY_API_KEY}" },
+      "models": {
+        "deepseek/deepseek-v4-flash-0731": {},
+        "openai/gpt-5-nano": {}
+      }
+    }
+  },
+  "mcp": {
+    "relume-library": {
+      "type": "remote",
+      "url": "https://relume-library-mcp.relume.io/mcp",
+      "enabled": true
+    }
+  }
+}
